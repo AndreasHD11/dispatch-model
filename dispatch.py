@@ -28,7 +28,7 @@ n.add(
 	bus="gen_bus",
 	p_nom=100,
 	p_max_pu=0.5,
-	marginal_cost=0,
+	marginal_cost=20,
 )
 
 n.optimize()
