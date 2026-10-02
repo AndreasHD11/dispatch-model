@@ -1,10 +1,11 @@
 import pypsa
 
 n = pypsa.Network()
+n.snapshots = [1, 2, 3]
 
 n.add("Bus", "gen_bus", carrier="transmission")
 n.add("Bus", "load_bus")
-n.add("Load", "load_1", bus="load_bus", p_set=700)
+n.add("Load", "load_1", bus="load_bus", p_set=[543, 320, 274])
 n.add(
     "Link",
     "transmission",
@@ -27,7 +28,7 @@ n.add(
 	"solar",
 	bus="gen_bus",
 	p_nom=100,
-	p_max_pu=0.5,
+	p_max_pu=[0, 0.5, 0.2],
 	marginal_cost=1,
 )
 
