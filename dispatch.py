@@ -22,6 +22,15 @@ n.add(
     marginal_cost=3,
 )
 
+n.add(
+	"Generator",
+	"solar",
+	bus="gen_bus",
+	p_nom=100,
+	p_max_pu=0.5,
+	marginal_cost=0,
+)
+
 n.optimize()
 print(n.generators_t.p)
 n.model.to_file("dispatch.lp")
